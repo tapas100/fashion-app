@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/'></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="help"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="container">
+  <div class="static-container">
+    <div class="search-bar-container">
+      <mat-form-field class="search-bar" appearance="outline">
+        <div matPrefix class="search-icon">
+          <mat-icon>search</mat-icon>
+        </div>
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip *ngFor="let category of catagories" [selectable]="selectable" [removable]="removable" (removed)="remove(category)">
+            {{category.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+    <div class="search-options">
+      <p>You may also search for :</p>
+      <div class="suggetion-items">
+        <div *ngFor="let category of sugested_categories" class="item">
+          <h5>{{category.name}}</h5>
+          <p>{{category.posts}} posts</p>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="item">
+        <h3>{{selected_category_info?.number_of_people}}K</h3>
+        <p>Number of people talking about <span *ngFor="let category of catagories">{{category.name}}</span></p>
+      </div>
+      <div class="item">
+        <h3>{{selected_category_info?.Kofluence_people}}K</h3>
+        <p>Number of kofluence people talking about <span *ngFor="let category of catagories">{{category.name}}</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="posts">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab label="Top Posts">
+        <div class="list-container">
+          <div *ngFor="let post of posts" class="item">
+            <div id="t{{post.id}}" class="image-wrapper" [ngStyle]="{'background-image': 'url(' + post.image + ')'}" ></div>
+            <div class="item-info">
+                  <p><mat-icon>visibility</mat-icon>{{post?.views | number}}</p>
+                  <p><mat-icon>favorite</mat-icon>{{post?.views | number}}</p>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Latest Posts">
+        <div class="list-container">
+          <div *ngFor="let post of posts" class="item">
+            <div id="l{{post.id}}" class="image-wrapper" [ngStyle]="{'background-image': 'url(' + post.image + ')'}"></div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-button>
+      Start A Campaign
+    </ion-button>
+  </ion-fab>
+</ion-content>

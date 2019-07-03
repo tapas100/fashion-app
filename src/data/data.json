@@ -1,0 +1,74 @@
+{
+    "selected_categories": [
+        {"name":"#sandals"},
+        {"name":"#shoes"}
+    ],
+    "suggested_categories": [
+        {"name":"#flatshos","posts":"12K"},
+        {"name":"#heels","posts":"15k"},
+        {"name":"#redshoes","posts":"11K"},
+        {"name":"#sportsshoes","posts":"18K"}
+    ],
+    "categories_info": {
+        "#sandals": {
+            "number_people": 120,
+            "Kofluence_people": 11,
+            "posts": [
+                {
+                    "id":5501,
+                    "image":"/assets/Surface.png",
+                    "views":1000,
+                    "likes":2000
+                },
+                {
+                    "id":5502,
+                    "image":"/assets/Surface-1.png",
+                    "views":3000,
+                    "likes":4000
+                },
+                {
+                    "id":5503,
+                    "image":"/assets/Surface-2.png",
+                    "views":6000,
+                    "likes":5000
+                },
+                {
+                    "id":5504,
+                    "image":"/assets/Surface-3.png",
+                    "views":3000,
+                    "likes":1800
+                }
+            ]
+        },
+        "#shoes": {
+            "number_people": 80,
+            "Kofluence_people": 9,
+            "posts": [
+                {
+                    "id":5505,
+                    "image":"/assets/Surface-4.png",
+                    "views":1000,
+                    "likes":2000
+                },
+                {
+                    "id":5506,
+                    "image":"/assets/Surface-5.png",
+                    "views":3000,
+                    "likes":4000
+                },
+                {
+                    "id":5507,
+                    "image":"/assets/Surface-6.png",
+                    "views":6000,
+                    "likes":5000
+                },
+                {
+                    "id":5508,
+                    "image":"/assets/Surface-7.png",
+                    "views":3000,
+                    "likes":1800
+                }
+            ]
+        }
+    }
+}

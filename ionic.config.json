@@ -1,0 +1,7 @@
+{
+  "name": "k-test",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

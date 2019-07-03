@@ -54,10 +54,14 @@
       <mat-tab label="Top Posts">
         <div class="list-container">
           <div *ngFor="let post of posts" class="item">
-            <div id="t{{post.id}}" class="image-wrapper" [ngStyle]="{'background-image': 'url(' + post.image + ')'}" ></div>
+            <div id="t{{post.id}}" class="image-wrapper" [ngStyle]="{'background-image': 'url(' + post.image + ')'}"></div>
             <div class="item-info">
-                  <p><mat-icon>visibility</mat-icon>{{post?.views | number}}</p>
-                  <p><mat-icon>favorite</mat-icon>{{post?.views | number}}</p>
+              <p>
+                <mat-icon>visibility</mat-icon>{{post?.views | number}}
+              </p>
+              <p>
+                <mat-icon>favorite</mat-icon>{{post?.views | number}}
+              </p>
             </div>
           </div>
         </div>
@@ -66,6 +70,14 @@
         <div class="list-container">
           <div *ngFor="let post of posts" class="item">
             <div id="l{{post.id}}" class="image-wrapper" [ngStyle]="{'background-image': 'url(' + post.image + ')'}"></div>
+            <div class="item-info">
+              <p>
+                <mat-icon>visibility</mat-icon>{{post?.views | number}}
+              </p>
+              <p>
+                <mat-icon>favorite</mat-icon>{{post?.views | number}}
+              </p>
+            </div>
           </div>
         </div>
       </mat-tab>

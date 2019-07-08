@@ -17,7 +17,10 @@ export class HomePage {
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  catagories: Category[] = [];
+  catagories: Category[] =  [
+    {"name":"#sandals"},
+    {"name":"#shoes"}
+];
   sugested_categories = [];
   selected_category_info: any;
   posts = [];
@@ -50,25 +53,28 @@ export class HomePage {
     if (index >= 0) {
       this.catagories.splice(index, 1);
     }
+    this.getData();
   }
 
   getData() {
     this.dataService.get().subscribe(val => {
       console.log(val);
-      this.catagories = val['selected_categories'];
-      this.sugested_categories = val['suggested_categories'];
+      console.log(this.catagories);
       let tempObj = new Object();
       tempObj['number_of_people'] = 0;
       tempObj['Kofluence_people'] = 0;
       this.posts = [];
+      this.sugested_categories = [];
       Object.keys(val['categories_info']).forEach(element => {
         if (this.catagories.find(ele => ele.name == element)) {
           Array.prototype.push.apply(this.posts, val['categories_info'][element].posts);
           tempObj['number_of_people'] = tempObj['number_of_people'] + val['categories_info'][element].number_people;
           tempObj['Kofluence_people'] = tempObj['Kofluence_people'] + val['categories_info'][element].Kofluence_people;
+          Array.prototype.push.apply(this.sugested_categories, val['categories_info'][element].suggested_categories);
           console.log(this.posts);
         }
       });
+      console.log(tempObj,this.sugested_categories);
       this.selected_category_info = tempObj;
     })
   }

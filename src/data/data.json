@@ -1,14 +1,4 @@
 {
-    "selected_categories": [
-        {"name":"#sandals"},
-        {"name":"#shoes"}
-    ],
-    "suggested_categories": [
-        {"name":"#flatshos","posts":"12K"},
-        {"name":"#heels","posts":"15k"},
-        {"name":"#redshoes","posts":"11K"},
-        {"name":"#sportsshoes","posts":"18K"}
-    ],
     "categories_info": {
         "#sandals": {
             "number_people": 120,
@@ -38,7 +28,9 @@
                     "views":3000,
                     "likes":1800
                 }
-            ]
+            ],
+            "suggested_categories":[ {"name":"#flatshos","posts":"12K"},
+                {"name":"#heels","posts":"15k"}]
         },
         "#shoes": {
             "number_people": 80,
@@ -68,7 +60,9 @@
                     "views":3000,
                     "likes":1800
                 }
-            ]
+            ],
+            "suggested_categories":[{"name":"#redshoes","posts":"11K"},
+                {"name":"#sportsshoes","posts":"18K"}]
         }
     }
 }

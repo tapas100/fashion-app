@@ -1,3 +1,5 @@
+[![version](https://img.shields.io/badge/version-0.0.1-green.svg)](https://semver.org)
+
 # fashion-app
 ![](https://github.com/tapas100/fashion-app/blob/master/phn.png)
 
